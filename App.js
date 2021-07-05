@@ -1,14 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './screens/HomeScreen';
+import DailyPic from './screens/DailyPic';
+import SpaceCrafts from './screens/SpaceCrafts';
+import StarMap from './screens/StarMap';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const Stack = createStackNavigator();
+
+export default class App extends React.Component {
+  render(){
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="HomeScreen" screenOptions={{headerShown: false}}>
+          <Stack.Screen name="Home" component={HomeScreen}/>
+          <Stack.Screen name="SpaceCrafts" component={SpaceCrafts}/>
+          <Stack.Screen name="DailyPic" component={DailyPic}/>
+          <Stack.Screen name="StarMap" component={StarMap}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
