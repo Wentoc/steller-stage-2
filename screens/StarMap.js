@@ -14,28 +14,29 @@ export default class StarMap extends Component {
   }
 
  componentDidMount() {
-   this.getData()
+  //  this.getData()
  }
 
- getData=async()=>{
-   const { latitude, longitude } = this.state;
-   const path = `https://virtualsky.lco.global/embed/index.html?longitude=${latitude}&latitude=${longitude}&constellations=true&constellationlabels=true&showstarlabels=true&gridlines_az=true&live=true`
-   return(
-      <View styles={styles.mapContainer}>
-        <WebView
-          scalesPageToFit={true}
-          source={{uri: path}}
-          style={{ marginTop: 20, marginBottom: 20 }}
-        />
-      </View>
-   )
- }
+//  getData=async()=>{
+//    const { latitude, longitude } = this.state;
+//    const path = `https://virtualsky.lco.global/embed/index.html?longitude=${latitude}&latitude=${longitude}&constellations=true&constellationlabels=true&showstarlabels=true&gridlines_az=true&live=true`
+//    return(
+//       <View styles={styles.mapContainer}>
+//         <WebView
+//           scalesPageToFit={true}
+//           source={{uri: path}}
+//           style={{ marginTop: 20, marginBottom: 20 }}
+//         />
+//       </View>
+//    )
+//  }
 
   render() {
     return (
       <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
-        <ImageBackground source={require('../assets/space.gif')} style={{flex: 1, resizeMode: "cover", width: '100%', height: '100%'}}>
-          <Text style={{textAlign: 'center',position: 'absolute', top: 50, left: 120, fontWeight: 'bold', fontSize: 30, color: "#ffffff"}}>
+        <ImageBackground source={require('../assets/space.gif')} style={{flex: 1, resizeMode: "cover", width: '100%', height: '50%'}}>
+          <Image source={require('../assets/star_map.png')} style={{width: 70, height: 70, justifyContent: 'center', alignItems: 'center', marginLeft: 140, marginTop: 50}}/>
+          <Text style={{textAlign: 'center',position: 'absolute', top: 150, left: 120, fontWeight: 'bold', fontSize: 30, color: "#ffffff"}}>
             StarMap 
           </Text>
           <View style={styles.inputBoxes}>
@@ -58,7 +59,12 @@ export default class StarMap extends Component {
               }}
             />
           </View>
-         <TouchableOpacity style={{
+          <WebView
+            scalesPageToFit={true}
+            source={{uri: 'https://virtualsky.lco.global/embed/index.html?longitude=77.102493&latitude=28.704060&constellations=true&constellationlabels=true&showstarlabels=true&gridlines_az=true&live=true'}}
+            style={{ marginTop: 20, marginBottom: 60 }}
+          />
+         {/* <TouchableOpacity style={{
            width: 150,
            height: 50,
            backgroundColor: "#90ceeb",
@@ -68,7 +74,7 @@ export default class StarMap extends Component {
            borderRadius: 5
          }} onPress={()=>this.getData()}>
            <Text style={{fontSize: 20, color: "#ffffff", fontWeight: "bold", textAlign: 'center', marginTop: 0}}>Search</Text>
-         </TouchableOpacity>
+         </TouchableOpacity> */}
         </ImageBackground>
       </View>
     );
@@ -77,6 +83,7 @@ export default class StarMap extends Component {
 const styles = StyleSheet.create({
   inputBoxes: {
     flex: 1,
+    marginTop: 50
   },
   inputBox1: {
     width: "80%",
