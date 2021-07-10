@@ -14,7 +14,7 @@ export default class App extends React.Component {
   render(){
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="HomeScreen" screenOptions={{headerShown: false}}>
+        <Stack.Navigator initialRouteName="StarMap" screenOptions={{headerShown: false}}>
           <Stack.Screen name="Home" component={HomeScreen}/>
           <Stack.Screen name="SpaceCrafts" component={SpaceCrafts}/>
           <Stack.Screen name="DailyPic" component={DailyPic}/>

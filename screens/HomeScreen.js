@@ -7,10 +7,10 @@ export default class HomeScreen extends React.Component {
         return(
           <View style={{ flex: 1, backgroundColor: '#000000' }}>
                 <SafeAreaView style={styles.androidsav}/>
-                {/* <ImageBackground 
-                   source={require('../assets/splash.png')}
+                <ImageBackground 
+                   source={require('../assets/space.gif')}
                    style={styles.bgImage}
-                /> */}
+                >
                 <Image source={require('../assets/main-icon.png')} style={styles.headerImg}/>
                 <Text style={styles.headerTxt}>Steller App</Text>
 
@@ -32,6 +32,7 @@ export default class HomeScreen extends React.Component {
                        </Text>
                     </TouchableOpacity>
                 </View>
+                </ImageBackground>
           </View>
         );
     }
@@ -40,7 +41,9 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   bgImage: {
     flex: 1,
-    resizeMode: 'cover'
+    resizeMode: 'cover',
+    width: "100%",
+    height: "100%"
   },
   headerImg: {
     width: 200,

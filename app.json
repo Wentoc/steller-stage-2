@@ -4,11 +4,11 @@
     "slug": "steller-stage2",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/main-icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/main-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#90ceeb"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,8 +21,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/main-icon.png",
+        "backgroundColor": "#90ceeb"
       }
     },
     "web": {
