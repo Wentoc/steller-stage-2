@@ -39,6 +39,9 @@ export default class HomeScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  androidsav: {
+    marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+  },
   bgImage: {
     flex: 1,
     resizeMode: 'cover',

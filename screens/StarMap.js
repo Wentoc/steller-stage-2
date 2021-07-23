@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ImageBackground, Image, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
+import { View, Text, ImageBackground, Image, TouchableOpacity, TextInput, StyleSheet, SafeAreaView, Platform, StatusBar } from 'react-native';
 import { WebView } from "react-native-webview";
 
 // const path = `https://virtualsky.lco.global/embed/index.html?longitude={this.state.latitude}&latitude={this.state.longitude}&constellations
@@ -34,6 +34,7 @@ export default class StarMap extends Component {
   render() {
     return (
       <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
+        <SafeAreaView style={styles.androidsav}/>
         <ImageBackground source={require('../assets/space.gif')} style={{flex: 1, resizeMode: "cover", width: '100%', height: '50%'}}>
           <Image source={require('../assets/star_map.png')} style={{width: 70, height: 70, justifyContent: 'center', alignItems: 'center', marginLeft: 140, marginTop: 50}}/>
           <Text style={{textAlign: 'center',position: 'absolute', top: 150, left: 120, fontWeight: 'bold', fontSize: 30, color: "#ffffff"}}>
@@ -81,6 +82,9 @@ export default class StarMap extends Component {
   }
 }
 const styles = StyleSheet.create({
+  androidsav: {
+    marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+  },
   inputBoxes: {
     flex: 1,
     marginTop: 50
