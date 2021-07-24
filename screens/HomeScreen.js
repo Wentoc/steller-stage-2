@@ -16,18 +16,18 @@ export default class HomeScreen extends React.Component {
 
                 <View style={styles.btnContainer}>
                     <TouchableOpacity style={styles.btn1} onPress={()=>this.props.navigation.navigate('SpaceCrafts')}>
-                       <Text style={{fontWeight: 'bold', fontSize: 30, marginLeft: 5, marginTop: 55, color: '#ffffff'}}>
+                       <Text style={{fontWeight: 'bold', fontSize: 30, marginLeft: 5, marginTop: 55, color: '#ffffff', textAlign: 'center'}}>
                            Space Crafts
                        </Text>
-                       <Image style={{resizeMode: 'contain', width: 100, height: 100, position: 'absolute'}} source={{uri: '../assets/space_crafts.png'}}/>
+                       <Image style={{width: 100, height: 100,}} source={{uri: '../assets/space_crafts.png'}}/>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btn2} onPress={()=>this.props.navigation.navigate('StarMap')}>
-                       <Text style={{fontWeight: 'bold', fontSize: 30, marginLeft: 5, marginTop: 55, color: '#ffffff'}}>
+                       <Text style={{fontWeight: 'bold', fontSize: 30, marginLeft: 5, marginTop: 55, color: '#ffffff', textAlign: 'center'}}>
                            Star Maps
                        </Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btn3} onPress={()=>this.props.navigation.navigate('DailyPic')}>
-                       <Text style={{fontWeight: 'bold', fontSize: 30, marginLeft: 5, marginTop: 55, color: '#ffffff'}}>
+                       <Text style={{fontWeight: 'bold', fontSize: 30, marginLeft: 5, marginTop: 55, color: '#ffffff', textAlign: 'center'}}>
                            Daily Pictures
                        </Text>
                     </TouchableOpacity>

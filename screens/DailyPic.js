@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, StatusBar, Platform, SafeAreaView, Alert, Linking } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, StatusBar, Platform, SafeAreaView, Alert, Linking, ScrollView } from 'react-native';
 import axios from 'axios';
 
 export default class DailyPic extends Component {
@@ -50,7 +50,10 @@ export default class DailyPic extends Component {
             }}
           >
           <View style={styles.header}>
-            <Text style={{textAlign: 'center', marginTop: 22, color: "#000", fontSize: 30, fontWeight: "bold"}}> DailyPic </Text>
+            {/* <TouchableOpacity onPress={()=>this.props.navigation.navigate("HomeScreen")}>
+              <Text style={{marginTop: 32, marginLeft: 10, fontSize: 20}}>Back</Text>
+            </TouchableOpacity> */}
+            <Text style={{textAlign: 'center', marginTop: 25, color: "#000", fontSize: 30, fontWeight: "bold"}}> DailyPic </Text>
           </View>
   
           <Text style={{ textAlign: "center", color: '#fff', fontSize: 20, fontWeight: 'bold', marginTop: 100 }}>Astronomy picture of the day</Text> 
@@ -76,7 +79,9 @@ export default class DailyPic extends Component {
             </View>
           </TouchableOpacity>
   
+         <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={styles.explanationText}>{this.state.apod.explanation}</Text>
+         </ScrollView>
   
           {/* marginTop: 400 */}
           </ImageBackground>
@@ -105,6 +110,11 @@ const styles = StyleSheet.create({
 
   },
   explanationText: {
-    color: "#fff"
+    color: "#fff",
+    marginTop: 15,
+    fontWeight: 'bold',
+    fontSize: 17,
+    flex: 1,
+    marginLeft: 20
   }
 })
